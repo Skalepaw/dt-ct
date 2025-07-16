@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Licznik odwiedzin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    #visitCount {
+      color: #007BFF;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Witaj na stronie!</h1>
+  <p>Odwiedziłeś tę stronę <span id="visitCount">0</span> razy.</p>
+
+  <script>
+    let visits = localStorage.getItem('visits') || 0;
+    visits++;
+    localStorage.setItem('visits', visits);
+    document.getElementById('visitCount').textContent = visits;
+  </script>
+
+</body>
+</html>
